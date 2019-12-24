@@ -1,0 +1,11 @@
+div.task-item{
+  display: flex;
+  border: 2px solid black;
+  justify-content: center;
+}
+div.task{
+  border: 2px solid red;
+}
+button.cancel{
+  border: 2px solid blue;
+}
