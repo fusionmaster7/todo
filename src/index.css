@@ -1,6 +1,5 @@
 div.task-item{
   display: flex;
-  border: 2px solid black;
   justify-content: center;
 }
 div.task{
