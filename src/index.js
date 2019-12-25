@@ -14,17 +14,20 @@ class Task extends React.Component{
   }
 }
 
-//Component to render a list made up of tasks
-class List extends React.Component{
+//Component to render the entire app
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      tasks: Array(3).fill('Tasks'),
+    };
+  }
   render(){
     return(
       <div>
-        <Task task="Task 1" />
-        <Task task="Task 2" />
-        <Task task="Task 3" />
+        {this.state.tasks.map((item)=>{return <Task task={item} />})}
       </div>
     );
   }
 }
-
-ReactDOM.render(<List />,document.getElementById('root'));
+ReactDOM.render(<App />,document.getElementById('root'));
