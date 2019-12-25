@@ -30,7 +30,7 @@ class List extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        tasks: Array(3).fill('Default'),
+        tasks: [],
       };
     }
     renderTask = (data)=>{
@@ -40,10 +40,25 @@ class List extends React.Component{
       return(
         <div>
           {this.renderTask('Task 1')}
-          {this.renderTask('Task 2')}
+          {this.state.tasks.map((item)=>this.renderTask(item))}
         </div>
       );
     }
 }
 
-ReactDOM.render(<List />,document.getElementById('root'));
+//Component to render the actual App.
+class App extends React.Component{
+  render(){
+    return(
+      <div className="app">
+        <h1>Welcome!</h1>
+        <form>
+          <input type="text" name="taskName" placeholder="Enter your Task"></input>
+          <button>Add</button>
+        </form>
+        <br />
+        <List />
+      </div>
+    );
+  }
+}
