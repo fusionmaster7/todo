@@ -4,13 +4,26 @@ import './index.css';
 
 //Component to render each task
 class Task extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      renderTask: true,
+    };
+  }
+  clickHandler=()=>{
+    this.setState({renderTask:false});
+  }
   render(){
-    return(
-      <div className="task-item">
-        <div className="task">{this.props.task}</div>
-        <button className="cancel">Cancel</button>
-      </div>
-    );
+    if(this.state.renderTask){
+      return(
+        <div className="task-item">
+          <div className="task">{this.props.task}</div>
+          <button className="cancel" onClick={this.clickHandler}>Remove</button>
+        </div>
+      );
+    }else{
+      return null;
+    }
   }
 }
 
@@ -19,7 +32,7 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      taskList: Array(3).fill('Tasks'),
+      taskList: [],
     };
   }
   clickHandler=()=>{
@@ -38,11 +51,12 @@ class App extends React.Component{
           placeholder="Enter new task here"
           id="newTask"></input>
         </form>
-        <button onClick={this.clickHandler}>Add</button>
         <br />
+        <button onClick={this.clickHandler}>Add</button>
         {this.state.taskList.map((item)=>{return <Task task={item} />})}
       </div>
     );
   }
 }
+
 ReactDOM.render(<App />,document.getElementById('root'));
