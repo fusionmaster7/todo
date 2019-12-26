@@ -20,7 +20,7 @@ import './index.css';
        return(
          <div className="task-item">
           <div className="task">{this.props.task}</div>
-          <button className="button" onClick={this.clickHandler}>Remove</button>
+          <button className="cancel" onClick={this.clickHandler}>X</button>
         </div>
       );
     }else{

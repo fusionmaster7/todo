@@ -1,13 +1,52 @@
 div.task-item{
   display: flex;
   justify-content: center;
+  margin: 25px;
 }
 div.task{
-  border: 2px solid red;
+  font-size: 32px;
+  background-color: #FDFFFC;
+  font-family: 'Josefin Sans',sans-serif;
+  border-radius: 2px;
+}
+div.task:hover{
+  box-shadow: 10px 10px 10px black;
 }
 button.cancel{
-  border: 2px solid blue;
+  background-color: #FDFFFC;
+  border: 0px;
+  font-size: 20px;
+}
+button.cancel:hover{
+  background-color: black;
+  color: white;
+}
+h1{
+  font-family: 'Josefin Sans',sans-serif;
+  color: #FDFFFC;
+  font-size: 48px;
+}
+input{
+  font-size: 24px;
+  text-align: center;
+  border-radius: 5px;
+}
+button.add{
+  font-size: 24px;
+  font-size: 'Josefin Sans',sans-serif;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #FDFFFC;
+}
+button.add:hover{
+  background-color: #7EBAB2;
+  color: white;
+  box-shadow: 5px 5px 5px black;
 }
 div.app{
   text-align: center;
+}
+body{
+  /*Dont put hex values in quotes while using react!*/
+  background-color: #011627;
 }
