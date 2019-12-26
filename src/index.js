@@ -1,31 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Task from './Task.js';
 import './index.css';
-
-//Component to render each task
-class Task extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={
-      renderTask: true,
-    };
-  }
-  clickHandler=()=>{
-    this.setState({renderTask:false});
-  }
-  render(){
-    if(this.state.renderTask){
-      return(
-        <div className="task-item">
-          <div className="task">{this.props.task}</div>
-          <button className="cancel" onClick={this.clickHandler}>Remove</button>
-        </div>
-      );
-    }else{
-      return null;
-    }
-  }
-}
 
 //Component to render the entire app
 class App extends React.Component{
