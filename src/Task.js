@@ -19,6 +19,7 @@ import './index.css';
        //Render task only if its state value is true
        return(
          <div className="task-item">
+          <input type="checkbox" id="task_completion_box" name="task" />
           <div className="task">{this.props.task}</div>
           <button className="cancel" onClick={this.clickHandler}>X</button>
         </div>

@@ -13,7 +13,7 @@ class App extends React.Component{
   }
   clickHandler=()=>{
     let newTask = document.getElementById('newTask').value;
-    if(newTask==""){
+    if(newTask===""){
       alert('Please enter a task');
     }else{
       let copyTaskList = this.state.taskList.slice();
