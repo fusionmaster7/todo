@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Task from './Task.js';
+import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 
 //Component to render the entire app
@@ -23,18 +24,20 @@ class App extends React.Component{
   }
   render(){
     return(
-      <div className="app">
-        <h1>Welcome !</h1>
-        <form>
-          <input type="text"
-          name="taskName"
-          placeholder="Enter new task here"
-          id="newTask"></input>
-        </form>
-        <br />
-        <button className="add" onClick={this.clickHandler}>Add New Task</button>
-        {this.state.taskList.map((item)=>{return <Task task={item} />})}
-      </div>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <div className="app">
+            <h1>Welcome !</h1>
+            <form>
+            <input type="text"
+            name="taskName"
+            placeholder="Enter new task here"
+            id="newTask"></input>
+            </form>
+            <br />
+            <button className="add" onClick={this.clickHandler}>Add New Task</button>
+            {this.state.taskList.map((item)=>{return <Task task={item} />})}
+        </div>
+      </BrowserRouter>
     );
   }
 }
